@@ -6,6 +6,9 @@ ruby "3.1.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.4"
 
+# Use bootstrap-sass to convert Less to Sass and enable all bootstrap files
+gem "bootstrap-sass", ">=3.4.1"
+
 # Use Sass to process CSS
 gem "sassc-rails"
 
