@@ -22,5 +22,22 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select 'div.alert'
   end
 
+  test 'valid submission' do
+    assert_difference 'User.count' do
+      post users_path, params: {
+        user: { name: 'yiewjr wrrwt',
+                email: 'ewr@wertasd.lol',
+                password: 'password',
+                password_confirmation: 'password'
+        }
+      }
+    end
+
+    follow_redirect!
+    assert_template 'users/show'
+
+    assert_not flash.alert
+  end
+
 end
 
