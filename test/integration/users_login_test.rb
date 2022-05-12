@@ -6,11 +6,13 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     @user = users(:Armo)
   end
 
-  test 'login with invalid credentials' do
+  test 'login with valid email and invalid password' do
     get login_path
     assert_template 'sessions/new'
 
-    post login_path, params: { session: { email: '', password: '' } }
+    post login_path, params: { session: { email: @user.email,
+                                          password: '' } }
+
     assert_response :unprocessable_entity
     assert_template 'sessions/new'
     assert_not flash.empty?
