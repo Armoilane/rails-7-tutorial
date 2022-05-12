@@ -1,2 +1,4 @@
-# empty
-#
+Armo:
+  name: Ari Moilanen
+  email: armo@iki.fi
+  password_digest: <%= User.digest('password') %>
