@@ -29,6 +29,13 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  # Returns true if the given token matches the digest
+  def authenticated?(remember_token)
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
+
   class << self
 
     # Returns the hash digest of the given string
@@ -41,11 +48,6 @@ class User < ApplicationRecord
     # Returns a random token
     def new_token
       SecureRandom.urlsafe_base64
-    end
-
-    # Returns true if the given token matches the digest
-    def authenticated?(remember_token)
-      BCrypt::Password.new(remember_digest).is_password?(remember_token)
     end
 
   end
