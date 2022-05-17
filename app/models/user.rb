@@ -24,6 +24,10 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
+  # Forget user by setting remember digest to nil
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
 
   class << self
 
