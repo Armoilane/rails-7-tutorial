@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
       reset_session
       log_in @user
@@ -22,6 +23,16 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      # handle successful update
+    else
+      render 'edit', status: :unprocessable_entity
+    end
   end
 
   private
