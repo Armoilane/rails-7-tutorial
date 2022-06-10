@@ -2,3 +2,9 @@ Armo:
   name: Ari Moilanen
   email: armo@iki.fi
   password_digest: <%= User.digest('password') %>
+
+archer:
+  name: Sterling Archer
+  email: archer@swe.gov
+  password_digest: <%= User.digest('password') %>
+
