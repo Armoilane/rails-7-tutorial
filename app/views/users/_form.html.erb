@@ -1,0 +1,18 @@
+<%= form_with(model: @user) do |f| %>
+  <%= render 'shared/error_messages', object: @user %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-conrol' %>
+
+  <%= f.label :email%>
+  <%= f.text_field :email, class: 'form-conrol' %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-conrol' %>
+
+  <%= f.label :password_confirmation, 'Confirmation' %>
+  <%= f.password_field :password_confirmation, class: 'form-conrol' %>
+
+  <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+<% end %>
+
