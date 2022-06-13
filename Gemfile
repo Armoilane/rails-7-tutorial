@@ -9,6 +9,10 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.4"
 # Use bootstrap-sass to convert Less to Sass and enable all bootstrap files
 gem "bootstrap-sass", ">=3.4.1"
 
+# Use faker to make sample users, normally restricted to development,
+# but we will use it also on production site
+gem 'faker'
+
 # Use Sass to process CSS
 gem "sassc-rails"
 
