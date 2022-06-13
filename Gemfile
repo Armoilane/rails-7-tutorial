@@ -13,6 +13,10 @@ gem "bootstrap-sass", ">=3.4.1"
 # but we will use it also on production site
 gem 'faker'
 
+# Use will_paginate for simple and robust pagination with its bootstrap styles
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Use Sass to process CSS
 gem "sassc-rails"
 
