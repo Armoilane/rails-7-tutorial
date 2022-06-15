@@ -42,7 +42,7 @@ Rails.application.configure do
   # On cloud IDE host would be ex. '<hex string>.vfs.cloud9.us-east...'
   # and protocol would be 'https'
   host = 'localhost:3000' # local host
-  confic.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 
   config.action_mailer.perform_caching = false
 
