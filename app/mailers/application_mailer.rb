@@ -1,6 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
 
-  default from: 'user@realdomain.com'
+  default from: 'armo@iki.fi'
   layout 'mailer'
 
 end
