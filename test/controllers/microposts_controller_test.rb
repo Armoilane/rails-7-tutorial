@@ -19,7 +19,7 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
    end
 
    test 'should redirect destroy when not logged in' do
-     assert_no_difference 'Microposts.count' do
+     assert_no_difference 'Micropost.count' do
        delete micropost_path(@micropost)
      end
 
