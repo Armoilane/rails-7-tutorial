@@ -22,8 +22,9 @@ end
 
 # Generate microposts for a subset of users.
 users = User.order(:created_at).take(6)
-50.times do
-  content = Faker::ChuckNorris.fact
+50.times do |n|
+  content = (n % 2).zero? ? Faker::ChuckNorris.fact :
+                            Faker::Hipster.sentence
   users.each { |user| user.microposts.create!(content: content) }
 end
 
