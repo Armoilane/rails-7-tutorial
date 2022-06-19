@@ -1,20 +1,9 @@
 <% if logged_in? %>
 
-  <div class='row'>
-    <aside class='col-md-4'>
-      <section class='user_info'>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class='micropost_form'>
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-  </div>
-
-<%= image_tag("kitten.jpg", alt: "Adorable kitten", width: "200") %>
+  <%= render 'logged_in_home' %>
 
 <% else %>
 
-  <%= render "welcome_page" %>
+  <%= render 'welcome_page' %>
 
 <% end %>
