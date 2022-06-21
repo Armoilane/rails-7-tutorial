@@ -29,7 +29,7 @@ class MicropostsInterfaceTest < MicropostsInterface
   test 'should create a micropost on valid submission' do
     content = 'This micropost really ties the room together'
 
-    assert_difference 'Micropost.count' do
+    assert_difference 'Micropost.count', 1 do
       post microposts_path, params: { micropost: { content: content } }
     end
 
