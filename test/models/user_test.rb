@@ -109,6 +109,7 @@ class UserTest < ActiveSupport::TestCase
     # Own posts for user with followers
     armo.microposts.each do |post|
       assert armo.feed.include?(post)
+      assert_equal armo.feed.distinct, armo.feed
     end
 
     # Posts from non-followed user
